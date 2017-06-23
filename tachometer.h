@@ -5,6 +5,6 @@ extern int storage[100];
 extern int ambientLight;
 extern int sensorDelay;
 
-void calibrateTachometer();
-float calculateSpeed();
+void calibrateTachometer(int pin);
+float calculateSpeed(int pin);
 #endif

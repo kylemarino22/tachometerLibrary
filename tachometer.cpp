@@ -5,18 +5,18 @@ int storage[100];
 int ambientLight;
 int sensorDelay = 50;
 
-void calibrateTachometer(){
+void calibrateTachometer(int pin){
         int val = 0;
         for (int i = 0; i < 50; i++) {
-                val += analogRead(0);
+                val += analogRead(pin);
         }
         ambientLight = val / 50;
 }
 
-float calculateSpeed(){
+float calculateSpeed(int pin){
         int val;
         for (int i = 0; i < 100; i++) {
-                val = analogRead(0);
+                val = analogRead(pin);
                 storage[i] = val;
                 delayMicroseconds(sensorDelay);
         }
