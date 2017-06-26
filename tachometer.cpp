@@ -34,7 +34,33 @@ float calculateSpeed(int pin){
                         }
 
                 }
+
                 counter++;
+        }
+        // if(finalLocation == 0){
+        //   finalLocation = 100 - switchLocation;
+        // }
+        // Serial.println("============");
+        // for(int i = 0; i < 100; i++) {
+        //         Serial.println(storage[i]);
+        // }
+        // Serial.println("============");
+
+        // if(finalLocation > 50 || finalLocation == 0 && sensorDelay > 40) {
+        //         sensorDelay -= 10;
+        // }
+        // else if(finalLocation < 30) {
+        //         sensorDelay += 10;
+        // }
+
+        if(finalLocation == 0) {
+                sensorDelay += 20;
+        }
+        else if(finalLocation > 50) {
+                sensorDelay += 20;
+        }
+        else if(finalLocation < 30 && sensorDelay > 40) {
+                sensorDelay -= 20;
         }
 
         Serial.println(finalLocation);
